@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}דף הבית{% endblock %}
+
+{% block content %}
+<h2>דף הנחיתה</h2>
+<a href="{% url 'new_order' %}">הזמנה חדשה</a>
+<a href="{% url 'track_orders' %}">מעקב הזמנות</a>
+{% endblock %}

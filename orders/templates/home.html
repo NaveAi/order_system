@@ -1,0 +1,18 @@
+<!-- orders/templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}דף הבית{% endblock %}
+
+{% block content %}
+<header>
+    <h1>ברוכים הבאים לאתר שלנו</h1>
+</header>
+<nav>
+    <a href="{% url 'register' %}">הרשמה</a>
+    <a href="{% url 'login' %}">התחברות</a>
+</nav>
+<main>
+    <h2>מה תרצה לעשות?</h2>
+    <p>התחבר או הירשם כדי לגשת להזמנות האישיות שלך.</p>
+</main>
+{% endblock %}

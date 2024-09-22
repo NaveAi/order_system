@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}דף הבית{% endblock %}
+
+{% block content %}
+<h2>הזמנה חדשה</h2>
+<form method="post">
+    {% csrf_token %}
+    <textarea name="details" placeholder="פרטי ההזמנה"></textarea>
+    <button type="submit">שלח הזמנה</button>
+</form>
+{% endblock %}

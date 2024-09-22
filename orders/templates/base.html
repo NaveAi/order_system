@@ -1,0 +1,35 @@
+{% load static %}  <!-- הוספת שורה זו -->
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'orders/styles.css' %}">
+    <title>{% block title %}דף בסיס{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <nav>
+            
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">התנתקות</a>
+                <form id="logout-form" action="{% url 'logout' %}" method="post" style="display: none;">
+                    {% csrf_token %}
+                </form>
+                <a href="{% url 'landing_page' %}">הזמנות</a>
+            {% else %}
+                <a href="{% url 'home' %}">דף הבית</a>
+                <a href="{% url 'register' %}">הרשמה</a>
+                <a href="{% url 'login' %}">התחברות</a>
+            {% endif %}
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>© 2024 כל הזכויות שמורות</p>
+    </footer>
+</body>
+</html>

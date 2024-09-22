@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}דף הבית{% endblock %}
+
+{% block content %}
+<h2>הרשמה</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">הרשם</button>
+</form>
+{% endblock %}

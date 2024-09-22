@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}דף הבית{% endblock %}
+
+{% block content %}
+<h2>מעקב הזמנות</h2>
+<table class="table-orders" dir="rtl">  <!-- הוספת dir="rtl" -->
+    <thead>
+        <tr>
+            <th>תאריך</th>
+            <th>תיאור ההזמנה</th>
+            <th>סטטוס</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+            <tr>
+                <td>{{ order.order_date }}</td>
+                <td>{{ order.details }}</td>
+                <td>{{ order.status }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

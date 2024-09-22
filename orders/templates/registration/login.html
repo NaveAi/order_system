@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}התחברות{% endblock %}
+
+{% block content %}
+<h2>התחברות</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">התחבר</button>
+</form>
+<p>אין לך חשבון? <a href="{% url 'register' %}">הרשמה</a></p>
+{% endblock %}
